@@ -1,0 +1,379 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.upHead {
+    height: 51px;
+    background-color: #00486D;
+    color: #99B6C5;
+    font-family: DM Sans;
+    font-size: 18px;
+    line-height: 51px;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 107px;
+}
+
+.container {
+    padding: 0 85px;
+}
+
+.header-left {
+    display: flex;
+    gap: 40px;
+}
+
+.header-logo {
+    margin-top: 35px;
+}
+
+.header-menu a {
+    text-decoration: none;
+    font-family: DM Sans;
+    font-size: 19px;
+    line-height: 107px;
+    color: #00486D;
+    margin-right: 40px;
+}
+
+.header-right {
+    display: flex;
+    gap: 32px;
+}
+
+.header-phone {
+    font-family: DM Sans;
+    font-size: 17px;
+    line-height: 107px;
+    color: #00486D;
+}
+
+.button {
+   height: 59px;
+    font-family: DM Sans;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 59px;
+    text-align: center;
+    padding: 0 29px;
+    background-color: #00486D;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    border: 2px solid transparent; /* краї прозорі */
+    border-radius: 8px; /* робить краї м'якими та круглими */
+}
+
+.button:hover {
+    border-color: transparent; /* краї прозорі*/
+    box-shadow: 0px 8px 15px rgba(0, 72, 109, 0.3);
+    transform: translateY(-2px);
+}
+
+.up24px {
+    margin-top: 24px;
+}
+
+.representation {
+    display: flex;
+    justify-content: space-between;
+    background-color: #E4ECF0;
+}
+
+h1 {
+    font-family: DM Serif Text;
+    font-size: 55px;
+    line-height: 67.2px;
+    color: #00486D;
+    margin-bottom: 25px;
+}
+
+p {
+    font-family: DM Sans;
+    font-size: 24px;
+    line-height: 42px;
+    color: #00486D;
+}
+
+.represntation-text {
+    position: relative;
+    width: 635px;
+    height: 551px;
+    padding-top: 90px;
+     left: 100px;
+}
+
+.general-image {
+    position: relative;
+    background-color: #00486D;
+    width: 576px;
+    height: 753px;
+}
+
+.firstImage {
+    position: relative;
+    z-index: 4;
+    top: 50px;
+    right: 85px;
+    width: 576px;
+    height: 753px;
+}
+
+.m-b35 {
+    margin-bottom: 35px;
+}
+
+.areas {
+    padding-top: 160px;
+}
+
+h2 {
+    font-family: DM Serif Text;
+    font-size: 44px;
+    line-height: 52.8px;
+    color: #00486D;
+}
+
+.areas-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 55px;
+}
+
+.card {
+    position: relative;
+    width: 397px;
+    height: 500px;
+    padding: 40px 30px;
+    box-shadow: 1px 14px 8px rgba(34, 60, 80, 0.2);
+}
+
+.card a {
+    position: absolute;
+    text-decoration: none;
+    font-family: DM Sans;
+    font-size: 19px;
+    line-height: 50px;  
+    color: #00486D;
+    bottom: 40px;
+    left: 30px;
+}
+
+.card-image {
+    width: 100%;
+    height: 260px;
+}
+
+.card-name {
+    font-family: DM Sans;
+    font-size: 35px;
+    line-height: 120px;
+    color: #00486D;
+    margin-top: 48px;
+    margin-bottom: 12px;
+}
+
+.team {
+    position: relative;
+    height: 620px;
+}
+
+.team h3 {
+    margin-top: 225px;
+    text-align: center;
+    color: #0011ff;
+    font-size: 26px;
+}
+
+.team p {
+    text-align: center;
+    color: #0011ff;
+}
+
+.arrow {
+    position: absolute;
+    right: 85px;
+    top: -250px;
+}
+
+.partners {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.partners h2 {
+    margin-bottom: 40px;
+    color: #00486D; 
+}
+
+/* Налаштовуємо сітку на 6 колонок */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px; /* Відстань між кнопками */
+}
+
+/* Стиль самої кнопки бренду */
+.partner-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    background-color: #FFFFFF;
+    border: 1px solid #E4ECF0;
+    border-radius: 8px; /* Заокруглені кути */
+    text-decoration: none;
+    
+    /* Текст всередині кнопки */
+    color: #4A5568; 
+    font-family: DM Sans, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    
+    /* Легка тінь і плавна анімація */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+/* Ефект при наведенні мишкою */
+.partner-btn:hover {
+    border-color: #00486D;
+    box-shadow: 0px 6px 12px rgba(0, 72, 109, 0.15);
+    transform: translateY(-2px); /* Кнопка трохи піднімається */
+}
+
+.request {
+    height: 500px;
+    background-color: #E4ECF0;
+    text-align: center;
+    padding-top: 160px;
+}
+
+.request h2 {
+    margin-bottom: 20px;
+}
+
+.request p {
+    margin-bottom: 42px;
+}
+
+.footer {
+    background-color: #00486D;
+    display: flex;
+    justify-content: space-between; /* Розсуває ліву і праву колонки по краях */
+    padding-top: 100px; /* Внутрішній відступ зверху */
+    padding-bottom: 100px;
+    height: auto; /* Видаляємо фіксовану висоту щоб футер був гнучким */
+    box-sizing: border-box;
+}
+
+.footer-leftSide {
+    width: 350px;
+}
+
+.whitelogo {
+    margin-bottom: 40px;
+}
+
+.address, .phone, .mail {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #99B6C5;
+    margin-bottom: 8px; /* відступ між рядками */
+}
+
+.mail {
+    text-decoration: underline; /* підкреслення пошти */
+}
+
+.socials {
+    margin-top: 40px;
+}
+
+.social-item {
+    display: flex;
+    align-items: center; /* Центруємо іконку і текст по вертикалі */
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.social-item img {
+    margin-right: 15px;
+    width: 24px; /* іконки однакового розміру */
+}
+
+.soc-item-txt {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #99B6C5;
+}
+
+.footer-main {
+    max-width: 650px; 
+    margin-right: 350px;/* Обмежуємо ширину правого блоку */
+}
+
+.footer-main h4 {
+    font-family: 'DM Serif Text', serif;
+    font-weight: 400;
+    font-size: 34px; 
+    line-height: 42px;
+    color: #FFFFFF;
+    margin-top: 0; 
+    margin-bottom: 35px; /* Відступ до поля вводу */
+    width: 100%; /* текс займеє всю ширину блока */
+}
+
+.combiInput {
+    display: flex; /* Flexbox сам вирівняє поле і кнопку */
+    background-color: #99B6C5;
+    height: 60px;
+    width: 100%;
+    max-width: 420px;
+    padding: 5px; /* Відступ від країв сірого фону до кнопки */
+    box-sizing: border-box;
+}
+
+input {
+    position: static; 
+    flex-grow: 1; /* Поле вводу займає весь вільний простір зліва від кнопки */
+    height: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    color: #00486D;
+    padding-left: 20px;
+    background: transparent; /* Робимо input прозорим, шоб було видно сірий фон .combiInput */
+    border: none;
+    outline: none; /* забираю чорну рамку при кліку */
+}
+
+/* Email Address */
+input::placeholder {
+    color: #00486D;
+    opacity: 0.8;
+}
+
+.imageButton {
+    position: static;
+    width: 50px;
+    height: 100%; /* Кнопка на всю висоту доступного простору */
+    background-color: #00486D; 
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.imageButton:hover {
+    background-color: #002B41; /* темнішає при наведенні */
+}
