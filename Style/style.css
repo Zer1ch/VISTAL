@@ -190,8 +190,8 @@ h2 {
 
 .arrow {
     position: absolute;
-    right: 85px;
-    top: -250px;
+    right: 0px;
+    top: -200px;
 }
 
 .partners {
@@ -369,4 +369,249 @@ input::placeholder {
 
 .imageButton:hover {
     background-color: #002B41; /* темнішає при наведенні */
+}
+
+.burger {
+    display: none; /* На комп'ютері його не видно */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+    }
+
+    .burger span {
+    width: 35px;
+    height: 4px;
+    background-color: #00486D;
+    border-radius: 4px;
+    }
+
+/* =========================================
+   💻 ПЛАНШЕТИ (Код для екранів до 1024px)
+   ========================================= */
+@media (max-width: 1024px) {
+    
+    /* 1. Зменшуємо загальні відступи по боках */
+    .container {
+        padding: 0 30px; 
+    }
+
+    /* 2. Шапка: трохи зменшуємо шрифти і відступи, щоб меню влізло без бургера */
+    .header-left { gap: 20px; }
+    .header-menu a { font-size: 18px; margin-right: 20px; }
+    .header-right { gap: 20px; }
+    .header-phone { font-size: 18px; }
+    .button { padding: 0 15px; font-size: 16px; height: 50px; line-height: 50px; }
+
+    /* 3. Головний екран: складаємо текст і картинку один під одним */
+    .representation {
+        flex-direction: column;
+    }
+    .represntation-text {
+        width: 100%;
+        height: auto;
+        left: 0;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .general-image,
+    .firstImage {
+        width: 100%;
+        height: auto;
+        top: 0;
+        right: 0;
+    }
+
+    /* 4. Картки послуг: стискаємо їх, але лишаємо в один ряд */
+    .areas-cards {
+        gap: 15px;
+    }
+    .card {
+        width: 32%; /* Кожна картка займає третину екрана */
+        height: auto;
+        padding: 20px 15px;
+        padding-bottom: 70px;
+        box-sizing: border-box;
+    }
+    .card-image {
+        height: 180px; /* Зменшуємо висоту фото в картках */
+    }
+    .card-name {
+        font-size: 20px;
+        line-height: 1.2;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    /* 5. Футер */
+    .footer-leftSide { width: 35%; }
+    .footer-main { width: 60%; margin-right: 0; max-width: none; }
+}
+
+@media (max-width: 768px) {
+    
+    /* --- Загальний контейнер --- */
+    .container {
+        padding: 0 20px; /* Зменшуємо відступи по боках з 85px до 20px */
+    }
+
+   /* --- Шапка (Header) на мобільному --- */
+    .header {
+        flex-direction: row; /* Логотип зліва, бургер справа */
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        position: relative; /* Це потрібно, щоб меню випадало рівно під шапкою */
+    }
+
+    .header-left {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Ховаємо правий блок з телефоном і кнопкою на мобільному */
+    .header-right {
+        display: none;
+    }
+
+    /* Показуємо саму іконку бургера */
+    .burger {
+        display: flex; 
+    }
+
+    /* Робимо меню компактним випадаючим віконцем справа */
+    .header-menu {
+        display: none; 
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Трохи зменшили відстань між пунктами */
+        
+        position: absolute;
+        top: 100%; /* Падає рівно під шапку */
+        right: 20px; /* Притискаємо до правого краю (20px відступ від екрана) */
+        left: auto; /* Скасовуємо прив'язку до лівого краю */
+        width: 200px; /* Робимо ширину акуратною (можеш змінити на 150px чи 250px) */
+        
+        background-color: #E4ECF0;
+        padding: 20px 0;
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px; /* Додаємо заокруглені кути для краси */
+        z-index: 100;
+    }
+
+    .header-menu a {
+        margin-right: 0;
+        line-height: 40px;
+    }
+
+    /* Цей клас додасть JavaScript, щоб показати меню */
+    .header-menu.active {
+        display: flex;
+    }
+
+    /* --- Головний екран (Representation) --- */
+    .representation {
+        flex-direction: column;
+    }
+
+    .represntation-text {
+        width: 100%;
+        height: auto;
+        left: 0; /* Прибираємо зсув на 100px */
+        padding-top: 50px;
+        padding-bottom: 40px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 36px; /* Трохи зменшуємо головний заголовок */
+        line-height: 1.2;
+    }
+
+    .general-image,
+    .firstImage {
+        width: 100%;
+        height: auto;
+        top: 0; /* Прибираємо зсуви картинок */
+        right: 0;
+    }
+
+    /* --- Картки послуг (Areas) --- */
+    .areas {
+        padding-top: 60px;
+    }
+
+    .areas-cards {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+        padding-bottom: 80px; /* Зберігаємо місце для кнопки внизу */
+        box-sizing: border-box; /* Щоб padding не розширював картку за межі екрана */
+    }
+
+    /* --- Секція відгуків/Команди (Team) --- */
+    .team {
+        height: auto;
+        padding-bottom: 60px;
+    }
+
+    .team h3 {
+        margin-top: 80px;
+        font-size: 24px;
+    }
+
+    .arrow {
+        display: none; /* Ховаємо велику стрілку, щоб вона не ламала ширину екрана */
+    }
+
+    /* --- Партнери --- */
+    .partners {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr); /* Замість 6 колонок робимо 2 */
+        gap: 10px;
+    }
+
+    .partner-btn {
+        font-size: 18px; /* Зменшуємо шрифт у кнопках брендів */
+        height: 60px;
+    }
+
+    /* --- Запит на консультацію (Request) --- */
+    .request {
+        height: auto;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    /* --- Футер (Footer) --- */
+    .footer {
+        flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .footer-leftSide {
+        width: 100%;
+        margin-bottom: 50px; /* Відступ між контактами та формою підписки */
+    }
+
+    .footer-main {
+        max-width: 100%;
+        margin-right: 0; /* Скидаємо твій margin-right: 350px, щоб форма стала по центру */
+    }
+
+    .footer-main h4 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
 }

@@ -13,7 +13,7 @@
     <header class="header container">
         <div class="header-left">
             <div class="header-logo"><img src="Img/vistal.png" alt="logo"></div>
-            <div class="header-menu">
+            <div class="header-menu" id="menu-links">
                 <a href="#">Сервіс</a>
                 <a href="#">Про нас</a>
                 <a href="#">Контакти</a>
@@ -22,6 +22,11 @@
         <div class="header-right">
             <div class="header-phone">+380 98 243 58 38</div>
             <button class="button up24px">Замовити консультацію</button>
+        </div>
+        <div class="burger" id="burger">
+    <span></span>
+    <span></span>
+    <span></span>
         </div>
     </header>
     <section class="representation">
@@ -144,5 +149,18 @@
         </div>
       </div>
     </footer>
+    <script>
+        // Знаходимо бургер і меню за їхніми ID
+        const burger = document.getElementById('burger');
+        const menu = document.getElementById('menu-links');
+
+        // Додаємо подію кліку
+        burger.addEventListener('click', function() {
+            // Перемикаємо клас 'active' (якщо його немає - додає, якщо є - забирає)
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>
