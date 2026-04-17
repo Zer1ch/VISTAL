@@ -1,0 +1,658 @@
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        height: 107px;
+    }
+
+    .container {
+        padding: 0 85px;
+    }
+
+    .header-left {
+        display: flex;
+        gap: 40px;
+    }
+
+    .header-logo {
+        margin-top: 35px;
+    }
+
+    .header-menu a {
+        text-decoration: none;
+        font-family: "Roboto", sans-serif;  
+        font-size: 24px;
+        line-height: 107px;
+        color: #00486D;
+        margin-right: 40px;
+    }
+
+    .header-right {
+        display: flex;
+        gap: 32px;
+    }
+
+    .header-phone {
+        font-family: "Roboto", sans-serif;
+        font-size: 22px;
+        line-height: 107px;
+        color: #00486D;
+    }
+
+    .button {
+    height: 59px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 59px;
+        text-align: center;
+        padding: 0 29px;
+        background-color: #00486D;
+        color: #FFFFFF;
+        cursor: pointer;
+        transition: all 0.3s ease; 
+        border: 2px solid transparent; /* краї прозорі */
+        border-radius: 8px; /* робить краї м'якими та круглими */
+    }
+
+    .button:hover {
+        border-color: transparent; /* краї прозорі*/
+        box-shadow: 0px 8px 15px rgba(0, 72, 109, 0.3);
+        transform: translateY(-2px);
+    }
+
+    .up24px {
+        margin-top: 24px;
+    }
+
+    .representation {
+        display: flex;
+        justify-content: space-between;
+        background-color: #E4ECF0;
+    }
+
+    h1 {
+        font-family: "Roboto Mono", monospace;
+        font-size: 35px;
+        line-height: 67.2px;
+        color: #00486D;
+        margin-bottom: 25px;
+    }
+
+    p {
+        font-family: "Roboto Mono", monospace;
+        font-size: 20px;
+        line-height: 42px;
+        color: #00486D;
+    }
+
+    .represntation-text {
+        position: relative;
+        
+        /* 1. Гнучка ширина */
+        width: 100%; 
+        max-width: 635px; /* На комп'ютері буде 635px, на телефоні стиснеться під розмір екрана */
+        
+        /* 2. Гнучка висота */
+        min-height: 551px; /* Або взагалі видали цей рядок, щоб висота підлаштовувалась під текст (height: auto;) */
+        
+        padding-top: 90px;
+        
+        /* 3. Безпечні відступи по боках замість left: 100px */
+        padding-left: 20px; 
+        padding-right: 20px;
+        box-sizing: border-box; /* Обов'язково, щоб padding не збільшував ширину блоку понад 100% */
+    }
+
+    .general-image {
+        position: relative;
+        background-color: #00486D;
+        width: 576px;
+        height: 753px;
+    }
+
+    .firstImage {
+        position: relative;
+        z-index: 4;
+        top: 50px;
+        right: 85px;
+        width: 576px;
+        height: 753px;
+    }
+
+    .m-b35 {
+        margin-bottom: 35px;
+    }
+
+    .areas {
+        padding-top: 160px;
+    }
+
+    h2 {
+        font-family: "Roboto Mono", monospace;
+        font-size: 44px;
+        line-height: 52.8px;
+        color: #00486D;
+    }
+
+    .areas-cards {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 55px;
+    }
+
+    .card {
+        position: relative;
+        width: 397px;
+        height: 500px;
+        box-shadow: 1px 14px 8px rgba(34, 60, 80, 0.2);
+    }
+
+    .card a {
+        position: absolute;
+        text-decoration: none;
+        font-family: "Roboto Mono", monospace;
+        font-size: 19px;
+        line-height: 50px;  
+        color: #00486D;
+        bottom: 40px;
+        left: 30px;
+    }
+
+    .card-image {
+        width: 100%;
+        height: 270px;
+        padding: 6px;
+        box-sizing: border-box;     
+        
+    }
+    .card-image img {
+        margin-top: 6px;
+        width: 100% ; /* Картинка займає всю доступну ширину */
+        height: 100%; /* Картинка займає всю доступну висоту */
+        object-fit: cover; /* МАГІЯ: Картинка ідеально обріжеться по краях, не сплющуючись! */
+        display: block; /* Прибирає дрібні відступи під картинкою */
+    }
+
+    .card-name {
+        font-family: "Roboto Mono", monospace;
+        font-size: 25px;    
+        color: #00486D;
+        /* 1. Змінюємо жахливий інтервал на нормальний */
+         line-height: 1.2; 
+          /* 2. Налаштовуємо нові відступи */
+         margin-top: 35px; /* Трохи зменшили відступ від фото (було 48px) */
+         margin-bottom: 12px;
+         margin-left: 30px; /* Повертаємо відступ зліва */
+         margin-right: 30px; /* Повертаємо відступ справа */
+    }
+
+    .team {
+        position: relative;
+        padding-top: 120px;    /* Відступ зверху до тексту */
+         padding-bottom: 120px; /* Відступ знизу після тексту */
+         /* Якщо хочеш, щоб блок не виліз за межі на мобільному: */
+         box-sizing: border-box;
+    }
+
+    .team h3 {
+        font-family: "Roboto", sans-serif;
+        margin-top: 0px;
+        text-align: center;
+        color: #00486D;
+        font-size: 26px;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+    }
+
+        .team p {
+        font-family: 'Roboto', sans-serif; /* Звичайний шрифт для читання */
+        color: #00486D; /* Твій фірмовий темно-синій */
+        text-align: center  ; /* Вирівнювання по лівому краю */
+        font-size: 18px; /* Або 16px, підбери комфортний розмір */
+        line-height: 1.6; /* Збільшений міжрядковий інтервал, щоб текст "дихав" */
+        margin-bottom: 20px; /* Відступ між абзацами */
+    }
+
+    .arrow {
+        position: absolute;
+        right: 0px;
+        top: -200px;
+    }
+
+    .partners {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .partners h2 {
+        font-family: "Roboto Mono", monospace;
+        font-size: 50px;
+        margin-bottom: 40px;
+        color: #00486D; 
+    }
+
+    /* Налаштовуємо сітку на 6 колонок */
+    .partners-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 15px; /* Відстань між кнопками */
+    }
+
+    /* Стиль самої кнопки бренду */
+    .partner-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        background-color: #FFFFFF;
+        border: 1px solid #E4ECF0;
+        border-radius: 8px; /* Заокруглені кути */
+        text-decoration: none;
+        
+        color: #000000; 
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 25px;
+        
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.03);
+        transition: all 0.3s ease;
+    }
+
+    /* Ефект при наведенні мишкою */
+    .partner-btn:hover {
+        border-color: #00486D;
+        box-shadow: 0px 6px 12px rgba(0, 72, 109, 0.15);
+        transform: translateY(-2px); /* Кнопка трохи піднімається */
+    }
+
+    .request {
+        /* Замість жорсткої висоти використовуємо min-height або просто відступи */
+        min-height: 500px; /* Блок буде мінімум 500px, але зможе рости, якщо тексту стане більше */
+        
+        width: 100%;
+        background-color: #E4ECF0;
+        text-align: center;
+        
+        /* padding: верх | право | низ | ліво */
+        padding: 160px 20px 80px 20px; /* Додали 20px по боках, щоб текст не лип до екрана, і відступ знизу */
+        box-sizing: border-box; /* Обов'язково! */
+    }
+
+    .request h2 {
+        margin-bottom: 20px;
+        /* Якщо h2 має завеликий розмір шрифту, на мобільних його теж варто зменшити через @media */
+    }
+
+    .request p {
+        margin-bottom: 42px;
+    }
+
+    .footer {
+        background-color: #00486D;
+        display: flex;
+        justify-content: space-between; /* Розсуває ліву і праву колонки по краях */
+        padding-top: 100px; /* Внутрішній відступ зверху */
+        padding-bottom: 100px;
+        height: auto; /* Видаляємо фіксовану висоту щоб футер був гнучким */
+        box-sizing: border-box;
+    }
+
+    .footer-leftSide {
+        width: 350px;
+    }
+
+    .whitelogo {
+        margin-bottom: 40px;
+    }
+
+    .address, .phone, .mail {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 32px;
+        color: #99B6C5;
+        margin-bottom: 8px; /* відступ між рядками */
+    }
+
+    .mail {
+        text-decoration: underline; /* підкреслення пошти */
+    }
+
+    .socials {
+        margin-top: 40px;
+    }
+
+    .social-item {
+        display: flex;
+        align-items: center; /* Центруємо іконку і текст по вертикалі */
+        margin-bottom: 15px;
+        cursor: pointer;
+    }
+
+    .social-item img {
+        margin-right: 15px;
+        width: 24px; /* іконки однакового розміру */
+    }
+
+    .soc-item-txt {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        color: #99B6C5;
+    }
+
+    .footer-main {  
+        max-width: 650px; 
+        margin-right: 350px;/* Обмежуємо ширину правого блоку */
+    }
+
+    .footer-main h4 {
+        font-family: "Roboto", sans-serif;
+        font-size: 40px;
+        font-weight: 400;  
+        line-height: 42px;
+        color: #ffffff;
+        margin-top: 0; 
+        margin-bottom: 35px; /* Відступ до поля вводу */
+        width: 100%; /* текс займеє всю ширину блока */
+    }
+
+    .combiInput {
+        display: flex; /* Flexbox сам вирівняє поле і кнопку */
+        background-color: #99B6C5;
+        height: 60px;
+        width: 100%;
+        max-width: 420px;
+        padding: 5px; /* Відступ від країв сірого фону до кнопки */
+        box-sizing: border-box;
+    }
+
+    input {
+        position: static; 
+        flex-grow: 1; /* Поле вводу займає весь вільний простір зліва від кнопки */
+        min-width: 0;
+        height: 100%;
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        color: #00486D;
+        padding-left: 20px;
+        background: transparent; /* Робимо input прозорим, шоб було видно сірий фон .combiInput */
+        border: none;
+        outline: none; /* забираю чорну рамку при кліку */
+    }
+
+    /* Email Address */
+    input::placeholder {
+        color: #00486D;
+        opacity: 0.8;
+    }
+
+    .imageButton {
+        position: static;
+        width: 50px;
+        height: 100%; /* Кнопка на всю висоту доступного простору */
+        background-color: #00486D; 
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+        flex-shrink: 0; 
+    }
+
+    .imageButton:hover {
+        background-color: #002B41; /* темнішає при наведенні */
+    }
+
+    .burger {
+        display: none; /* На комп'ютері його не видно */
+        cursor: pointer;
+        flex-direction: column;
+        gap: 6px;
+        }
+
+        .burger span {
+        width: 35px;
+        height: 4px;
+        background-color: #00486D;
+        border-radius: 4px;
+        }
+
+        @media (max-width: 1024px) {
+        
+        /* 1. Зменшуємо загальні відступи по боках */
+        .container {
+            padding: 0 30px; 
+        }
+
+        /* 2. Шапка: трохи зменшуємо шрифти і відступи, щоб меню влізло без бургера */
+        .header-left { gap: 20px; }
+        .header-menu a { font-size: 18px; margin-right: 20px; }
+        .header-right { gap: 20px; }
+        .header-phone { font-size: 18px; }
+        .button { padding: 0 15px; font-size: 16px; height: 50px; line-height: 50px; }
+
+        /* 3. Головний екран: складаємо текст і картинку один під одним */
+        .representation {
+            flex-direction: column;
+        }
+        .represntation-text {
+            width: 100%;
+            height: auto;
+            left: 0;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .general-image,
+        .firstImage {
+            width: 100%;
+            height: auto;
+            top: 0;
+            right: 0;
+        }
+
+        /* 4. Картки послуг: стискаємо їх, але лишаємо в один ряд */
+        .areas-cards {
+            gap: 15px;
+        }
+        .card {
+            width: 32%; /* Кожна картка займає третину екрана */
+            height: auto;
+            padding: 20px 15px;
+            padding-bottom: 70px;
+            box-sizing: border-box;
+        }
+        .card-image {
+            height: 180px; /* Зменшуємо висоту фото в картках */
+        }
+        .card-name {
+            font-size: 20px;
+            line-height: 1.2;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* 5. Футер */
+        .footer-leftSide { width: 35%; }
+        .footer-main { width: 60%; margin-right: 0; max-width: none; }
+    }
+
+        @media (max-width: 768px) {
+        
+        /* --- Загальний контейнер --- */
+        .container {
+            padding: 0 20px; /* Зменшуємо відступи по боках з 85px до 20px */
+        }
+
+    /* --- Шапка (Header) на мобільному --- */
+        .header {
+            flex-direction: row; /* Логотип зліва, бургер справа */
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            position: relative; /* Це потрібно, щоб меню випадало рівно під шапкою */
+        }
+
+        .header-left {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Ховаємо правий блок з телефоном і кнопкою на мобільному */
+        .header-right {
+            display: none;
+        }
+
+        /* Показуємо саму іконку бургера */
+        .burger {
+            display: flex; 
+        }
+
+        /* Робимо меню компактним випадаючим віконцем справа */
+        .header-menu {
+            display: none; 
+            flex-direction: column;
+            align-items: center;
+            gap: 15px; /* Трохи зменшили відстань між пунктами */
+            
+            position: absolute;
+            top: 100%; /* Падає рівно під шапку */
+            right: 20px; /* Притискаємо до правого краю (20px відступ від екрана) */
+            left: auto; /* Скасовуємо прив'язку до лівого краю */
+            width: 200px; /* Робимо ширину акуратною (можеш змінити на 150px чи 250px) */
+            
+            background-color: #E4ECF0;
+            padding: 20px 0;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; /* Додаємо заокруглені кути для краси */
+            z-index: 100;
+        }
+
+        .header-menu a {
+            margin-right: 0;
+            line-height: 40px;
+        }
+
+        /* Цей клас додасть JavaScript, щоб показати меню */
+        .header-menu.active {
+            display: flex;
+        }
+
+        /* --- Головний екран (Representation) --- */
+        .representation {
+            flex-direction: column;
+        }
+
+        .represntation-text {
+            width: 100%;
+            height: auto;
+            left: 0; /* Прибираємо зсув на 100px */
+            padding-top: 50px;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px; /* Трохи зменшуємо головний заголовок */
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 24px; /* Зменшуємо розмір шрифту (можеш підібрати 24px або 26px за смаком) */
+            line-height: 1.3; /* Робимо міжрядковий інтервал трохи щільнішим для мобільних */
+        }
+
+        .general-image,
+        .firstImage {
+            width: 100%;
+            height: auto;
+            top: 0; /* Прибираємо зсуви картинок */
+            right: 0;
+        }
+
+        /* --- Картки послуг (Areas) --- */
+        .areas {
+            padding-top: 60px;
+        }
+
+        .areas-cards {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .card {
+            width: 100%;
+            height: auto;
+            padding-bottom: 80px; /* Зберігаємо місце для кнопки внизу */
+            box-sizing: border-box; /* Щоб padding не розширював картку за межі екрана */
+        }
+
+        /* --- Секція відгуків/Команди (Team) --- */
+        .team {
+            height: auto;
+            padding-bottom: 60px;
+        }
+
+        .team h3 {
+            margin-top: 60px;
+            font-size: 24px;
+        }
+
+        .arrow {
+            display: none; /* Ховаємо велику стрілку, щоб вона не ламала ширину екрана */
+        }
+
+        /* --- Партнери --- */
+        .partners {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .partners-grid {
+            grid-template-columns: repeat(2, 1fr); /* Замість 6 колонок робимо 2 */
+            gap: 10px;
+        }
+
+        .partner-btn {
+            font-size: 18px; /* Зменшуємо шрифт у кнопках брендів */
+            height: 60px;
+        }
+
+        /* --- Запит на консультацію (Request) --- */
+        .request {
+            height: auto;
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        /* --- Футер (Footer) --- */
+        .footer {
+            flex-direction: column;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .footer-leftSide {
+            width: 100%;
+            margin-bottom: 50px; /* Відступ між контактами та формою підписки */
+        }
+
+        .footer-main {
+            max-width: 100%;
+            margin-right: 0; /* Скидаємо твій margin-right: 350px, щоб форма стала по центру */
+        }
+
+        .footer-main h4 {
+            font-size: 28px;
+            line-height: 1.3;
+        }
+    }
