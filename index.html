@@ -21,7 +21,7 @@
         </div>
         <div class="header-right">
             <div class="header-phone">+380 98 243 58 38</div>   
-            <button class="button up24px">Замовити консультацію</button>
+            <button class="button">Замовити консультацію</button>
         </div>
         <div class="burger" id="burger">
     <span></span>
@@ -155,6 +155,7 @@
         burger.addEventListener('click', function() {
             // Перемикаємо клас 'active' (якщо його немає - додає, якщо є - забирає)
             menu.classList.toggle('active');
+            burger.classList.toggle('active'); // ДОДАЙ ЦЕЙ РЯДОК: Тепер бургер теж знає, що він натиснутий
         });
     </script>
 </body>

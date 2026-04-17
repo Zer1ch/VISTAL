@@ -5,7 +5,9 @@
     .header {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         height: 107px;
+        /
     }
 
     .container {
@@ -15,57 +17,89 @@
     .header-left {
         display: flex;
         gap: 40px;
+        align-items: center;
+        padding-left: 10px;
+    }
+    .header-right{
+        padding-right: 10px;
     }
 
     .header-logo {
-        margin-top: 35px;
+        align-items: center;
     }
 
+   /* 1. Стилізуємо контейнер меню */
+        .header-menu {
+        display: flex;
+        align-items: center; /* Центруємо посилання по вертикалі */
+        gap: 20px; /* Відстань між кнопками (замість margin-right у посиланнях) */
+    }
+
+    /* 2. Стилізуємо самі посилання (перетворюємо на блоки) */
     .header-menu a {
         text-decoration: none;
         font-family: "Roboto", sans-serif;  
-        font-size: 24px;
-        line-height: 107px;
+        font-size: 18px; /* Зменшили розмір шрифту, щоб блоки виглядали акуратніше */
         color: #00486D;
-        margin-right: 40px;
+        
+        /* Додаємо стилі "кнопки" */
+        display: inline-block;
+        padding: 10px 20px; /* Відступи всередині рамки */
+        background-color: #F8FAFC; /* Легкий світлий фон */
+        border: 1px solid #E4ECF0; /* Тонка рамка */
+        border-radius: 8px; /* Закруглені кути */
+        transition: all 0.3s ease; /* Плавність при наведенні */
+        align-items: center;    
     }
+
+    /* 3. Ефект при наведенні мишкою */
+    .header-menu a:hover {
+        background-color: #FFFFFF;
+        border-color: #00486D; /* Рамка стає фірмового синього кольору */
+        box-shadow: 0px 4px 6px rgba(0, 72, 109, 0.1);
+    }   
 
     .header-right {
         display: flex;
         gap: 32px;
+        align-items: center;
     }
 
     .header-phone {
         font-family: "Roboto", sans-serif;
         font-size: 22px;
-        line-height: 107px;
+        align-items: center;
         color: #00486D;
     }
 
-    .button {
+  .button {
+        /* --- ДОДАЄМО FLEXBOX ДЛЯ ІДЕАЛЬНОГО ЦЕНТРУВАННЯ ТЕКСТУ --- */
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        
         height: 59px;
         font-family: "Roboto", sans-serif;
         font-weight: 400;
         font-size: 18px;
-        line-height: 59px;
-        text-align: center;
+        
+        /* line-height: 59px;  <--- Я ВИДАЛИВ ЦЕЙ РЯДОК */
+        
         padding: 0 29px;
         background-color: #00486D;
         color: #FFFFFF;
         cursor: pointer;
         transition: all 0.3s ease; 
-        border: 2px solid transparent; /* краї прозорі */
-        border-radius: 8px; /* робить краї м'якими та круглими */
+        border: 2px solid transparent; 
+        border-radius: 8px; 
+        box-sizing: border-box; /* Гарантує, що кнопка не розпухне від padding */
+        margin: 0; /* Гарантує, що зовнішні відступи не посунуть кнопку */
     }
 
     .button:hover {
-        border-color: transparent; /* краї прозорі*/
+        border-color: transparent; 
         box-shadow: 0px 8px 15px rgba(0, 72, 109, 0.3);
         transform: translateY(-2px);
-    }
-
-    .up24px {
-        margin-top: 24px;
     }
 
     .representation {
@@ -135,21 +169,24 @@
         font-family: "Roboto Mono", monospace;
         font-size: 44px;
         line-height: 52.8px;
-        color: #00486D;
+        color: #00486D; 
     }
 
-    .areas-cards {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 55px;
-    }
+   .areas-cards {
+    display: flex;
+    flex-wrap: wrap; /* МАГІЯ: дозволяє елементам падати вниз, якщо їм тісно */
+    gap: 30px; /* Відстань між картками */
+    justify-content: center; /* Центруємо картки, якщо остання впаде вниз одна */
+}
 
-    .card {
-        position: relative;
-        width: 397px;
-        height: 500px;
-        box-shadow: 1px 14px 8px rgba(34, 60, 80, 0.2);
-    }
+.card {
+    position: relative; /* ВАЖЛИВО: Це наш якір, щоб посилання не вилітало! */
+    width: 100%;
+    max-width: 397px;
+    min-height: 500px; /* Зберігаємо мінімальну висоту, щоб картки були однакові */
+    box-shadow: 1px 14px 8px rgba(34, 60, 80, 0.2);
+    background-color: #FFFFFF;
+}
 
     .card a {
         position: absolute;
@@ -415,77 +452,172 @@
     }
 
     .burger {
-        display: none; /* На комп'ютері його не видно */
-        cursor: pointer;
-        flex-direction: column;
-        gap: 6px;
-        }
+    display: none; /* На комп'ютері його не видно */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between; /* Змінили gap на justify-content для стабільності */
+    width: 35px;
+    height: 24px; /* Жорстко зафіксували висоту (3 лінії по 4px + 2 пробіли по 6px = 24px) */
+    position: relative;
+    z-index: 101; /* Щоб хрестик завжди був поверх меню */
+}
 
-        .burger span {
-        width: 35px;
-        height: 4px;
-        background-color: #00486D;
-        border-radius: 4px;
-        }
+.burger span {
+    width: 100%;
+    height: 4px;
+    background-color: #00486D;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out; /* ПЛАВНІСТЬ: саме цей рядок робить анімацію */
+}
+
+/* --- АНІМАЦІЯ ПЕРЕТВОРЕННЯ НА ХРЕСТИК --- */
+
+/* Коли бургер має клас active, перша лінія (верхня) опускається і повертається */
+.burger.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+/* Середня лінія просто зникає */
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+/* Третя лінія (нижня) піднімається і повертається у зворотний бік */
+.burger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
 
         @media (max-width: 1024px) {
         
-        /* 1. Зменшуємо загальні відступи по боках */
-        .container {
-            padding: 0 30px; 
-        }
-
-        /* 2. Шапка: трохи зменшуємо шрифти і відступи, щоб меню влізло без бургера */
-        .header-left { gap: 20px; }
-        .header-menu a { font-size: 18px; margin-right: 20px; }
-        .header-right { gap: 20px; }
-        .header-phone { font-size: 18px; }
-        .button { padding: 0 15px; font-size: 16px; height: 50px; line-height: 50px; }
-
-        /* 3. Головний екран: складаємо текст і картинку один під одним */
-        .representation {
-            flex-direction: column;
-        }
-        .represntation-text {
-            width: 100%;
-            height: auto;
-            left: 0;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-        .general-image,
-        .firstImage {
-            width: 100%;
-            height: auto;
-            top: 0;
-            right: 0;
-        }
-
-        /* 4. Картки послуг: стискаємо їх, але лишаємо в один ряд */
-        .areas-cards {
-            gap: 15px;
-        }
-        .card {
-            width: 32%; /* Кожна картка займає третину екрана */
-            height: auto;
-            padding: 20px 15px;
-            padding-bottom: 70px;
-            box-sizing: border-box;
-        }
-        .card-image {
-            height: 180px; /* Зменшуємо висоту фото в картках */
-        }
-        .card-name {
-            font-size: 20px;
-            line-height: 1.2;
-            margin-top: 20px;
-            margin-bottom: 15px;
-        }
-
-        /* 5. Футер */
-        .footer-leftSide { width: 35%; }
-        .footer-main { width: 60%; margin-right: 0; max-width: none; }
+    /* 1. Зменшуємо загальні відступи по боках */
+    .container {
+        padding: 0 30px; 
     }
+
+    /* --- ХОВАЄМО СТРІЛКУ НА ПЛАНШЕТАХ --- */
+    .arrow {
+        display: none;
+    }
+
+    /* 2. Шапка: робимо компактною і в один ряд */
+    .header {
+        align-items: center;
+        padding: 15px 0;
+    }
+    .header-left { 
+        gap: 15px; 
+    }
+    .header-menu {
+        gap: 10px;
+    }
+    .header-menu a {
+        font-size: 20px;
+        margin-right: 0;
+        /* Перетворюємо кнопки на чистий текст */
+        background-color: transparent; 
+        border: none; 
+        padding: 0; 
+        width: auto; 
+    }
+    .header-right { 
+        gap: 15px;
+    }
+    .header-phone { 
+        font-size: 20px; 
+        white-space: nowrap; /* Забороняємо номеру розриватися */
+    }
+    .button { 
+        padding: 0 10px; 
+        font-size: 18px; 
+        height: 40px; 
+        line-height: 40px; 
+    }
+
+    /* 3. Головний екран */
+    .representation {
+        flex-direction: column;
+        padding-bottom: 0px; /* Відступ, щоб не налазив на areas */
+    }
+    .represntation-text {
+        max-width: 100%;
+        text-align: center; /* Текст по центру */
+        height: auto;
+        left: 0;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    /* Центруємо синю кнопку "Замовити консультацію" */
+    
+   /* 1. Контейнер (синя коробка) розтягується на весь екран */
+    .general-image {
+        width: 100%;
+        height: auto;
+        background-color: transparent; /* Прибираємо фон, щоб не було синіх смуг по боках */
+        position: static;
+        padding: 0; /* Прибираємо відступи тут */
+        margin-top: 30px;
+        display: flex;
+        justify-content: center; /* Центруємо фото, якщо воно буде менше екрана */
+    }
+
+    /* 2. Сама картинка займає ширину контейнера АБО менше */
+    .firstImage {
+        width: 100%;
+        max-width: 100%; /* Гарантує, що не вилізе за межі */
+        height: auto;
+        position: static;
+        display: block;
+        box-sizing: border-box;
+        object-fit: cover; /* Щоб картинка була чіткою */
+    }
+
+    /* 4. Картки послуг: стискаємо їх, але лишаємо в один ряд */
+    .areas-cards {
+        gap: 15px;
+    }
+    .team{
+        padding-top: 30px;
+    }
+    .card {
+        width: 32%; /* Кожна картка займає третину екрана */
+        min-height: auto;
+        padding: 0px;
+        padding-bottom: 70px;
+        box-sizing: border-box;
+    }
+    .card-image {
+        height: 180px; /* Зменшуємо висоту фото в картках */
+    }
+    .card-name {
+        font-size: 20px;
+        line-height: 1.2;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    /* --- ПАРТНЕРИ НА ПЛАНШЕТІ --- */
+    .partners-grid {
+        grid-template-columns: repeat(3, 1fr); /* Замість 6 колонок робимо 4 (або можеш поставити 3) */
+        gap: 15px; 
+        padding-bottom: 15px;
+    }
+    
+    .partner-btn {
+        font-size: 26px; /* Трохи зменшуємо шрифт (було 25px) */
+        text-align: center; /* На всякий випадок центруємо текст, якщо він все ж перенесеться */
+    }
+
+    /* 5. Футер */
+    .footer-leftSide { 
+        width: 35%; 
+    }
+    .footer-main { 
+        width: 60%; 
+        margin-right: 0;
+         max-width: none; 
+         padding-bottom: 15px;
+         padding-top: 15px;
+    }
+}
 
         @media (max-width: 768px) {
         
@@ -523,28 +655,46 @@
 
         /* Робимо меню компактним випадаючим віконцем справа */
         .header-menu {
-            display: none; 
-            flex-direction: column;
-            align-items: center;
-            gap: 15px; /* Трохи зменшили відстань між пунктами */
-            
-            position: absolute;
-            top: 100%; /* Падає рівно під шапку */
-            right: 20px; /* Притискаємо до правого краю (20px відступ від екрана) */
-            left: auto; /* Скасовуємо прив'язку до лівого краю */
-            width: 200px; /* Робимо ширину акуратною (можеш змінити на 150px чи 250px) */
-            
-            background-color: #E4ECF0;
-            padding: 20px 0;
-            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 8px; /* Додаємо заокруглені кути для краси */
-            z-index: 100;
-        }
+        display: none; 
+        flex-direction: column;
+        align-items: center; /* Якщо хочеш притиснути їх до правого краю, заміни на align-items: flex-end; */
+        gap: 15px; 
+        
+        position: absolute;
+        top: 100px; /* Твоя висота */
+        right: 20px; 
+        left: auto; 
+        width: auto; /* Дозволяємо кнопкам займати лише стільки місця, скільки їм треба */
+        
+        z-index: 100;
+    }
 
-        .header-menu a {
-            margin-right: 0;
-            line-height: 40px;
-        }
+       /* Стилізуємо посилання всередині мобільного меню */
+    .header-menu a {
+        display: block; /* Щоб кнопка займала всю ширину */
+        width: 100%;
+        max-width: 200px; /* Обмежуємо ширину кнопки */
+        text-align: center;
+        text-decoration: none;
+        
+        /* --- СТИЛЬ КНОПКИ --- */
+        background-color: #F8FAFC; /* Світло-сірий фон */
+        color: #00486D; /* Колір тексту */
+        padding: 12px 20px; /* Відступи всередині */
+        border: 1px solid #E4ECF0; /* Тонка рамка */
+        border-radius: 8px; /* Заокруглені кути */
+        
+        font-family: "Roboto Mono", monospace;
+        font-size: 20px;
+        transition: all 0.3s ease;
+    }
+
+    /* Ефект при натисканні або наведенні */
+    .header-menu a:hover {
+        background-color: #FFFFFF;
+        box-shadow: 0px 4px 10px rgba(0, 72, 109, 0.1);
+        transform: translateY(-2px);
+    }
 
         /* Цей клас додасть JavaScript, щоб показати меню */
         .header-menu.active {
