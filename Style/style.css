@@ -114,6 +114,7 @@
         line-height: 67.2px;
         color: #00486D;
         margin-bottom: 25px;
+        justify-content: center;
     }
 
     p {
@@ -136,8 +137,8 @@
         padding-top: 90px;
         
         /* 3. Безпечні відступи по боках замість left: 100px */
-        padding-left: 20px; 
-        padding-right: 20px;
+        padding-left: 100px; 
+        padding-right: 50px;
         box-sizing: border-box; /* Обов'язково, щоб padding не збільшував ширину блоку понад 100% */
     }
 
@@ -169,13 +170,13 @@
         font-family: "Roboto Mono", monospace;
         font-size: 44px;
         line-height: 52.8px;
-        color: #00486D; 
+        color: #00486D;
     }
 
    .areas-cards {
     display: flex;
     flex-wrap: wrap; /* МАГІЯ: дозволяє елементам падати вниз, якщо їм тісно */
-    gap: 30px; /* Відстань між картками */
+    gap: 75px; /* Відстань між картками */
     justify-content: center; /* Центруємо картки, якщо остання впаде вниз одна */
 }
 
@@ -761,10 +762,9 @@
         }
 
         .arrow {
-            display: none; /* Ховаємо велику стрілку, щоб вона не ламала ширину екрана */
+            display: none;
         }
 
-        /* --- Партнери --- */
         .partners {
             padding-top: 60px;
             padding-bottom: 60px;
