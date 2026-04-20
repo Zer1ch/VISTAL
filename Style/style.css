@@ -571,6 +571,167 @@
     margin-top: 20px;
 }
 
+/* =========================================
+   📞 СТОРІНКА "КОНТАКТИ" (contacts.html)
+   ========================================= */
+.contacts-page {
+    background-color: #F5F7F9; /* Світло-сірий фон, як на макеті */
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.contacts-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contacts-header h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+    color: #333333;
+}
+
+.contacts-header p {
+    font-size: 18px;
+    color: #666666;
+    max-width: 600px;
+    margin: 0 auto; /* Центруємо текст */
+}
+
+/* Контейнер для двох карток */
+.contacts-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Спільний стиль для обох білих карток */
+.contacts-info-card,
+.contacts-form-card {
+    background-color: #FFFFFF;
+    border-radius: 15px; /* Заокруглені кути */
+    padding: 40px;
+    width: 48%; /* Кожна займає майже половину екрана */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05); /* Легка тінь */
+    box-sizing: border-box;
+}
+
+/* --- Ліва картка (Карта та інфо) --- */
+.google-map {
+    width: 100%;
+    height: 250px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info-item .icon {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.info-item p {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    color: #00486D;
+    margin: 0; /* Забираємо стандартний відступ */
+}
+
+.social-links-contact {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Кружечки для соцмереж (можеш вставити туди картинки) */
+.soc-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: #3B82F6; /* Синій колір макета */
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.soc-circle:hover {
+    background-color: #00486D;
+    transform: translateY(-3px);
+}
+
+/* --- Права картка (Форма) --- */
+.contacts-form-card h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #E4ECF0;
+    border-radius: 8px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #3B82F6; /* Підсвічування при кліку */
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-top: 5px;
+}
+
+.checkbox-group label {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.5;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #3B82F6; /* Синій колір кнопки */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #00486D;
+}
+
         @media (max-width: 1024px) {
         
     /* 1. Зменшуємо загальні відступи по боках */
@@ -891,5 +1052,20 @@
         .footer-main h4 {
             font-size: 28px;
             line-height: 1.3;
+        }
+
+        /* --- Адаптив для сторінки Контакти --- */
+         .contacts-wrapper {
+        flex-direction: column; /* Ставимо картки в колонку */
+        }
+
+         .contacts-info-card,
+          .contacts-form-card {
+        width: 100%; /* Тепер кожна картка на всю ширину екрана */
+        padding: 25px; /* Трохи зменшуємо внутрішні відступи на телефоні */
+         }
+
+         .contacts-header h1 {
+        font-size: 32px;
         }
     }
