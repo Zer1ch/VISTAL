@@ -373,11 +373,19 @@
         align-items: center; /* Центруємо іконку і текст по вертикалі */
         margin-bottom: 15px;
         cursor: pointer;
+        width: fit-content;
+        text-decoration: none;
     }
 
     .social-item img {
+        mix-blend-mode: multiply;
         margin-right: 15px;
-        width: 24px; /* іконки однакового розміру */
+    }
+
+    .footer .social-item img {
+        filter: invert(1);
+        mix-blend-mode: screen;
+        width: 35px;
     }
 
     .soc-item-txt {
@@ -645,8 +653,11 @@
 
 .social-links-contact {
     display: flex;
-    gap: 15px;
     margin-top: 30px;
+}
+
+.social-links-contact img {
+    width: 65px;
 }
 
 /* Кружечки для соцмереж (можеш вставити туди картинки) */
