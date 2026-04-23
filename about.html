@@ -25,7 +25,7 @@
         </div>
         <div class="header-right">
             <div class="header-phone">+38 093 468 48 48</div>   
-            <button class="button">Замовити консультацію</button>
+            <button class="button open-consult-btn">Замовити консультацію</button>
         </div>
         <div class="burger" id="burger">
     <span></span>
@@ -132,21 +132,22 @@
         </div>
       </div>
     </footer>
-    <script>
-        // Знаходимо бургер і меню за їхніми ID
-        const burger = document.getElementById('burger');
-        const menu = document.getElementById('menu-links');
-
-        // Додаємо подію кліку
-        burger.addEventListener('click', function() {
-            // Перемикаємо клас 'active' (якщо його немає - додає, якщо є - забирає)
-            menu.classList.toggle('active');
-            burger.classList.toggle('active'); // ДОДАЙ ЦЕЙ РЯДОК: Тепер бургер теж знає, що він натиснутий
-        });
-    </script>
+    <div class="consult-modal-overlay" id="consultOverlay"></div>
+        <div class="consult-modal-window" id="consultModal">
+            <div class="modal-content">
+                <span class="close-consult-btn" id="closeConsultBtn">&times;</span>
+                <h2 style="color: #00486D; margin-top: 0; font-family: 'Roboto Mono', monospace;">Надішліть запит</h2>
+                <p style="color: #00486D; font-family: 'Roboto', sans-serif;">Заповніть форму нижче і ми зв'яжемося з вами протягом 24 годин.</p>
+                
+                <form action="#" method="POST" class="contact-form">
+                    <input type="text" placeholder="Ваше ім'я *" required>
+                    <input type="tel" placeholder="+38 (0**) *** ****" required>
+                    <input type="email" placeholder="Ваш Email">
+                    <textarea placeholder="Напишіть Ваше питання" rows="4"></textarea>
+                    
+                    <button type="submit" class="submit-btn" style="background-color: #4285F4; color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 10px;">Надіслати запит</button>
+                </form>
+            </div>
 </body>
 <script src="script.js"></script>
-</html>
-</body>
 </html> 
-</html>

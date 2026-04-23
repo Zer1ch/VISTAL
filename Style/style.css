@@ -768,11 +768,10 @@
     display: none; /* Сховане за замовчуванням */
     box-sizing: border-box;
     
-    /* ТА САМА МАГІЯ RGB ТІНЕЙ */
     box-shadow: 
-        0 5px 15px 5px rgba(0, 0, 255, 0.4),    /* Синій */
-        0 -5px 15px 5px rgba(255, 0, 255, 0.4), /* Рожевий */
-        0 0 15px 5px rgba(255, 165, 0, 0.4);    /* Помаранчевий */
+        0 5px 15px 5px rgba(0, 0, 255, 0.4),    
+        0 -5px 15px 5px rgba(255, 0, 255, 0.4), 
+        0 0 15px 5px rgba(255, 165, 0, 0.4);    
 }
 
 .close-consult-btn {
@@ -786,6 +785,23 @@
 
 .close-consult-btn:hover {
     color: #4285F4;
+}
+
+.modal-content {
+    padding-bottom: 30px;
+}
+
+.modal-scroll-area {
+    padding: 30px;
+}
+
+.modal-scroll-area h3 {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+}
+
+.modal-scroll-area p {
+    font-size: 18px;
 }
 
         @media (max-width: 1024px) {
