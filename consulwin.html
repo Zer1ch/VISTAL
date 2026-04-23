@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модальне вікно Vistal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button class="open-modal-btn">Замовити консультацію</button>
+
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <div class="modal-window" id="modalWindow">
+        <div class="modal-content">
+            <span class="close-modal-btn" id="closeModal">&times;</span>
+            <h2>Зв'яжіться з нами</h2>
+            <p>Заповніть форму нижче, і ми зв'яжемося з вами протягом 24 годин.</p>
+            <form>
+                <input type="text" placeholder="Ваше ім'я *" required>
+                <input type="tel" placeholder="+38 (0**) *** ****" required>
+                <input type="email" placeholder="Ваш Email">
+                <textarea placeholder="Напишіть Ваше питання" rows="4"></textarea>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agree" required>
+                    <label for="agree">Я погоджуюся з <a href="#">умовами надання послуг</a> та <a href="#">політикою конфіденційності</a>.</label>
+                </div>
+                <button type="submit" class="submit-btn">Надіслати запит</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
