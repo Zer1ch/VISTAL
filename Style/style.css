@@ -813,6 +813,20 @@
 .modal-scroll-area p {
     font-size: 18px;
 }
+/* --- ТЕКСТ У МОДАЛЬНОМУ ВІКНІ --- */
+.consult-modal-window h2 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.consult-modal-window p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: left;
+}
 
         @media (max-width: 1024px) {
         

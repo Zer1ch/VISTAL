@@ -13,14 +13,14 @@
             <header class="header container">
                 <div class="header-left">
                     <div class="header-logo">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="Img/vistal.png" alt="logo">
             </a>
-        </div>
+                </div>
                     <div class="header-menu" id="menu-links">
-                        <a href="service.html">Сервіс</a>
-                        <a href="about.html">Про нас</a>
-                        <a href="contacts.html">Контакти</a>
+                        <a href="service.php">Сервіс</a>
+                        <a href="about.php">Про нас</a>
+                        <a href="contacts.php">Контакти</a>
                     </div>
                 </div>
                 <div class="header-right">
@@ -59,17 +59,17 @@
                     <div class="card">
                         <div class="card-image"><img src="Img/B.jpg" alt=""></div>
                         <div class="card-name">Будівництво</div>
-                        <a href="#"> Дізнатися більше &rarr;</a>
+                        <a href="service.php"> Дізнатися більше &rarr;</a>
                     </div>
                     <div class="card">
                         <div class="card-image"><img src="Img/P.jpg" alt=""></div>
                         <div class="card-name">Промисловість</div>
-                        <a href="#"> Дізнатися більше &rarr;</a>
+                        <a href="service.php"> Дізнатися більше &rarr;</a>
                         </div>
                     <div class="card">
                         <div class="card-image"><img src="Img/A.jpg" alt=""></div>
                         <div class="card-name">Агробізнес та садівництво</div>
-                        <a href="#"> Дізнатися більше &rarr;</a>
+                        <a href="service.php"> Дізнатися більше &rarr;</a>
                     </div>
                 </div>
             </section>
@@ -162,23 +162,8 @@
                 </div>
             </div>
             </footer>
-        <div class="consult-modal-overlay" id="consultOverlay"></div>
-        <div class="consult-modal-window" id="consultModal">
-            <div class="modal-content">
-                <span class="close-consult-btn" id="closeConsultBtn">&times;</span>
-                <h2 style="color: #00486D; margin-top: 0; font-family: 'Roboto Mono', monospace;">Надішліть запит</h2>
-                <p style="color: #00486D; font-family: 'Roboto', sans-serif;">Заповніть форму нижче і ми зв'яжемося з вами протягом 24 годин.</p>
-                
-                <form action="#" method="POST" class="contact-form">
-                    <input type="text" placeholder="Ваше ім'я *" required>
-                    <input type="tel" placeholder="+38 (0**) *** ****" required>
-                    <input type="email" placeholder="Ваш Email">
-                    <textarea placeholder="Напишіть Ваше питання" rows="4"></textarea>
-                    
-                    <button type="submit" class="submit-btn" style="background-color: #4285F4; color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; margin-top: 10px;">Надіслати запит</button>
-                </form>
-            </div>
-        </div>
+
+        <?php include 'modal.php'; ?>
         <script src="script.js"></script>
         </body>
         </html> 

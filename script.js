@@ -1,36 +1,79 @@
- // Знаходимо бургер і меню за їхніми ID
-        const burger = document.getElementById('burger');
-        const menu = document.getElementById('menu-links');
+// --- БУРГЕР МЕНЮ ---
+const burger = document.getElementById('burger');
+const menu = document.getElementById('menu-links');
 
-        // Додаємо подію кліку
-        burger.addEventListener('click', function() {
-            // Перемикаємо клас 'active' (якщо його немає - додає, якщо є - забирає)
-            menu.classList.toggle('active');
-            burger.classList.toggle('active'); // ДОДАЙ ЦЕЙ РЯДОК: Тепер бургер теж знає, що він натиснутий
-        });
-        // Знаходимо всі кнопки "Замовити консультацію"
+burger.addEventListener('click', function() {
+    menu.classList.toggle('active');
+    burger.classList.toggle('active');
+});
+
+// --- МОДАЛЬНЕ ВІКНО ТА ФОРМА ---
 const consultBtns = document.querySelectorAll('.open-consult-btn');
 const consultOverlay = document.getElementById('consultOverlay');
 const consultModal = document.getElementById('consultModal');
 const closeConsultBtn = document.getElementById('closeConsultBtn');
+// Оголошуємо consultForm лише ОДИН раз
+const consultForm = document.getElementById('consultForm'); 
 
 // Функція відкриття
 function openConsult() {
-    consultOverlay.style.display = 'block';
-    consultModal.style.display = 'block';
+    if(consultOverlay && consultModal) {
+        consultOverlay.style.display = 'block';
+        consultModal.style.display = 'block';
+    }
 }
 
 // Функція закриття
 function closeConsult() {
-    consultOverlay.style.display = 'none';
-    consultModal.style.display = 'none';
+    if(consultOverlay && consultModal) {
+        consultOverlay.style.display = 'none';
+        consultModal.style.display = 'none';
+    }
 }
 
 // Вішаємо подію кліку на КОЖНУ кнопку на сторінці
-consultBtns.forEach(function(btn) {
-    btn.addEventListener('click', openConsult);
-});
+if(consultBtns.length > 0) {
+    consultBtns.forEach(function(btn) {
+        btn.addEventListener('click', openConsult);
+    });
+}
 
 // Закриття по хрестику та кліку на розмитий фон
-closeConsultBtn.addEventListener('click', closeConsult);
-consultOverlay.addEventListener('click', closeConsult);
+if(closeConsultBtn) closeConsultBtn.addEventListener('click', closeConsult);
+if(consultOverlay) consultOverlay.addEventListener('click', closeConsult);
+
+// --- ОБРОБКА ВІДПРАВКИ ФОРМИ ---
+if (consultForm) {
+    consultForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Забороняємо стандартну відправку сторінки
+
+        // Збираємо дані з полів
+        const formData = {
+            name: consultForm.querySelector('input[name="name"]').value,
+            phone: consultForm.querySelector('input[name="phone"]').value,
+            email: consultForm.querySelector('input[name="email"]').value,
+            message: consultForm.querySelector('textarea[name="message"]').value
+        };
+
+        // Відправляємо на сервер
+        fetch('/VISTAL/sub.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message); // Сповіщення для користувача
+            if (data.status === 'success') {
+                closeConsult(); // Закриваємо модальне вікно після успіху
+                consultForm.reset(); // Очищаємо форму
+            }
+        })
+        .catch(error => {
+            console.error('Помилка:', error);
+            alert('Сталася помилка при відправці.');
+        });
+    });
+}
