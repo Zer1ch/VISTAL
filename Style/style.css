@@ -767,11 +767,21 @@
     z-index: 2001; 
     display: none; /* Сховане за замовчуванням */
     box-sizing: border-box;
-    
-    box-shadow: 
-        0 5px 15px 5px rgba(0, 0, 255, 0.4),    
-        0 -5px 15px 5px rgba(255, 0, 255, 0.4), 
-        0 0 15px 5px rgba(255, 165, 0, 0.4);    
+       
+    border: 4px solid transparent;
+    /* Використовуємо background-origin, щоб градієнт малювався саме в межах рамки */
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    /* Сам градієнт + анімація повороту */
+    background-image: linear-gradient(white, white), 
+                      linear-gradient(45deg, #ff0000, #ff00ff, #0000ff, #00ffff, #00ff00, #ffff00, #ff0000);
+    background-size: 200% 200%;
+    animation: border-rotate 4s linear infinite;
+}
+
+@keyframes border-rotate {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
 }
 
 .close-consult-btn {
