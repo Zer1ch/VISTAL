@@ -77,3 +77,40 @@ if (consultForm) {
         });
     });
 }
+// --- ОБРОБКА ФОРМИ НА СТОРІНЦІ КОНТАКТІВ ---
+const contactsPageForm = document.getElementById('contactsPageForm');
+
+if (contactsPageForm) {
+    contactsPageForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Забороняємо перезавантаження сторінки
+
+        // Збираємо дані з полів
+        const formData = {
+            name: contactsPageForm.querySelector('input[name="name"]').value,
+            phone: contactsPageForm.querySelector('input[name="phone"]').value,
+            email: contactsPageForm.querySelector('input[name="email"]').value,
+            message: contactsPageForm.querySelector('textarea[name="message"]').value
+        };
+
+        // Відправляємо на наш сервер
+        fetch('/VISTAL/sub.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message); // Сповіщення для користувача
+            if (data.status === 'success') {
+                contactsPageForm.reset(); // Очищаємо форму після успіху
+                // Тут ми не викликаємо closeConsult(), бо вікна немає :)
+            }
+        })
+        .catch(error => {
+            console.error('Помилка:', error);
+            alert('Сталася помилка при відправці.');
+        });
+    });
+}

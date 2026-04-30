@@ -76,22 +76,20 @@
 
                 <div class="contacts-form-card">
                     <h2>Форма заявки</h2>
-                    <form action="#" method="POST" class="contact-form">
-                        <input type="text" placeholder="Ваше ім'я *" required>
-                        <input type="tel" placeholder="+38 (0**) *** ****" required>
-                        <input type="email" placeholder="Ваш Email">
-                        <textarea placeholder="Напишіть Ваше питання" rows="4"></textarea>
-                        
-                           <div class="checkbox-group">
-                            <input type="checkbox" id="agree" required>
-                              <label for="agree">
-                                 Я погоджуюся з <a href="inform.php" target="_blank" class="policy-link">умовами надання послуг та політикою конфіденційності</a>.
-                              </label>
-                            </div>
-                        <button type="submit" class="submit-btn">Надіслати запит</button>
+                    <form id="contactsPageForm" class="contact-form">
+                        <input type="text" name="name" placeholder="Ваше ім'я *" required>
+                        <input type="tel" name="phone" placeholder="+38 (0**) *** ****" required>
+                        <input type="email" name="email" placeholder="Ваш Email">
+                        <textarea name="message" placeholder="Напишіть Ваше питання" rows="4"></textarea>
+    
+                <div class="checkbox-group">
+                        <input type="checkbox" id="agreeContacts" required> <label for="agreeContacts">
+                        Я погоджуюся з <a href="inform.php" target="_blank" class="policy-link">умовами надання послуг та політикою конфіденційності</a>.
+                        </label>
+                </div>
+                     <button type="submit" class="submit-btn">Надіслати запит</button>
                     </form>
                 </div>
-
             </div>
         </div>
     </section>
