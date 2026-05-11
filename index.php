@@ -8,6 +8,7 @@
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Text&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="Style/style.css">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         </head> 
         <body>
             <header class="header container">
@@ -87,6 +88,24 @@
                     <img src="Img/arrow.png" alt="">
                 </div>
             </section>
+            <section class="testimonial container" style="padding-top: 80px;">
+    <h2 style="text-align: center; margin-bottom: 40px;">Відгуки наших клієнтів</h2>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="text-align: center; padding: 20px; background: #F8FAFC; border-radius: 12px;">
+                <p style="font-size: 18px; font-style: italic; color: #00486D;">"Чудова компанія! Швидко підібрали насосне обладнання для нашого об'єкту. Дуже задоволені сервісом."</p>
+                <h4 style="margin-top: 15px; color: #333;">Олександр Іванов</h4>
+                <p style="color: #666; font-size: 14px;">Головний інженер, ТОВ "БудСтандарт"</p>
+            </div>
+            <div class="swiper-slide" style="text-align: center; padding: 20px; background: #F8FAFC; border-radius: 12px;">
+                <p style="font-size: 18px; font-style: italic; color: #00486D;">"Співпрацюємо з Vistal вже більше 3 років. Завжди якісна продукція для систем пожежогасіння."</p>
+                <h4 style="margin-top: 15px; color: #333;">Марія Коваленко</h4>
+                <p style="color: #666; font-size: 14px;">Директор з закупівель</p>
+            </div>
+        </div>
+        <div class="swiper-pagination" style="position: static; margin-top: 20px;"></div>
+    </div>
+</section>
             <section class="partners container">
                 <h2>
                     Співпраця та каталоги з брендами
@@ -119,7 +138,7 @@
                 <p>
                     Зв'яжіться з нами, щоб отримати консультацію для вирішення ваших проблем.
                 </p>
-                <a href="contacts.html" class="button inline-button">Зв'язатися з нами</a>
+                <a href="contacts.php" class="button inline-button">Зв'язатися з нами</a>
             </section>
             <footer class="footer container">
             <div class="footer-leftSide">
@@ -164,6 +183,7 @@
             </footer>
 
         <?php include 'modal.php'; ?>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="script.js"></script>
         </body>
         </html> 
