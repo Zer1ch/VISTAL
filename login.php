@@ -49,6 +49,30 @@ if (isAuthorized()) {
             box-sizing: border-box;
             font-size: 16px;
         }
+        
+        /* --- СТИЛІ ДЛЯ КНОПКИ ПАРОЛЯ --- */
+        .password-wrapper {
+            position: relative;
+            width: 100%;
+        }
+        .password-wrapper input {
+            margin-bottom: 20px;
+            padding-right: 45px; /* Залишаємо місце для ока, щоб текст на нього не наліз */
+        }
+        .toggle-password-btn {
+            position: absolute;
+            top: 25px; /* Центруємо по вертикалі відносно інпута */
+            right: 15px;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: #00486D;
+            padding: 0;
+            outline: none;
+        }
+
         .login-btn {
             width: 100%;
             background-color: #00486D;
@@ -76,13 +100,36 @@ if (isAuthorized()) {
         <h2>Вхід для адміністратора</h2>
         <form class="login-form" id="loginForm">
             <p class="error-message" id="errorMessage"></p>
+            
             <input type="text" name="login" placeholder="Логін" required>
-            <input type="password" name="password" placeholder="Пароль" required>
+            
+            <div class="password-wrapper">
+                <input type="password" id="passwordInput" name="password" placeholder="Пароль" required>
+                <button type="button" class="toggle-password-btn" id="togglePassword">👁️</button>
+            </div>
+
             <button type="submit" class="login-btn" id="loginBtn">Увійти</button>
         </form>
     </div>
 
     <script>
+        // --- ЛОГІКА ПОКАЗУ ПАРОЛЯ ---
+        const togglePasswordBtn = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('passwordInput');
+
+        togglePasswordBtn.addEventListener('click', function () {
+            // Перевіряємо поточний тип поля
+            const isPassword = passwordInput.getAttribute('type') === 'password';
+            
+            // Якщо був password, робимо text (показуємо), і навпаки
+            passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+            
+            // Міняємо іконку (око або перекреслене око)
+            this.textContent = isPassword ? '🙈' : '👁️'; 
+        });
+
+
+        // --- ЛОГІКА АВТОРИЗАЦІЇ ---
         const loginForm = document.getElementById('loginForm');
         const errorMessage = document.getElementById('errorMessage');
         const loginBtn = document.getElementById('loginBtn');
