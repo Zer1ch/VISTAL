@@ -2,7 +2,6 @@
 session_start();
 require_once 'auth.php'; 
 
-// Якщо адмін вже зайшов, одразу кидаємо його в адмінку
 if (isAuthorized()) {
     header('Location: admin.php');
     exit;
@@ -50,18 +49,17 @@ if (isAuthorized()) {
             font-size: 16px;
         }
         
-        /* --- СТИЛІ ДЛЯ КНОПКИ ПАРОЛЯ --- */
         .password-wrapper {
             position: relative;
             width: 100%;
         }
         .password-wrapper input {
             margin-bottom: 20px;
-            padding-right: 45px; /* Залишаємо місце для ока, щоб текст на нього не наліз */
+            padding-right: 45px; 
         }
         .toggle-password-btn {
             position: absolute;
-            top: 25px; /* Центруємо по вертикалі відносно інпута */
+            top: 25px; 
             right: 15px;
             transform: translateY(-50%);
             background: none;
@@ -113,23 +111,17 @@ if (isAuthorized()) {
     </div>
 
     <script>
-        // --- ЛОГІКА ПОКАЗУ ПАРОЛЯ ---
         const togglePasswordBtn = document.getElementById('togglePassword');
         const passwordInput = document.getElementById('passwordInput');
 
         togglePasswordBtn.addEventListener('click', function () {
-            // Перевіряємо поточний тип поля
             const isPassword = passwordInput.getAttribute('type') === 'password';
             
-            // Якщо був password, робимо text (показуємо), і навпаки
             passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
             
-            // Міняємо іконку (око або перекреслене око)
             this.textContent = isPassword ? '🙈' : '👁️'; 
         });
 
-
-        // --- ЛОГІКА АВТОРИЗАЦІЇ ---
         const loginForm = document.getElementById('loginForm');
         const errorMessage = document.getElementById('errorMessage');
         const loginBtn = document.getElementById('loginBtn');
@@ -155,7 +147,7 @@ if (isAuthorized()) {
                 const result = await response.json();
 
                 if (result.success) {
-                    window.location.href = 'admin.php'; // Успіх! Переходимо в адмінку
+                    window.location.href = 'admin.php'; 
                 } else {
                     errorMessage.textContent = result.message;
                     loginBtn.textContent = 'Увійти';

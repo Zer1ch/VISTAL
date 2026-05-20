@@ -14,7 +14,7 @@
             <header class="header container">
                 <div class="header-left">
                     <div class="header-logo">
-            <a href="index.php">
+                    <a href="index.php">
                 <img src="Img/vistal.png" alt="logo">
             </a>
                 </div>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="header-right">
-                    <div class="header-phone">+38 093 468 48 48</div>   
+                    <div class="header-phone">+38 093 468 48 48</div>
                     <button class="button open-consult-btn">Замовити консультацію</button>
                 </div>
                 <div class="burger" id="burger">
@@ -175,10 +175,10 @@
                 <h4 class="white">  
                     Отримуйте актуальні новити щодо правил компанії, нових товарів та послуг залишивши вашу електрону адресу.
                 </h4>
-                <div class="combiInput">
-                    <input type="text" placeholder="Електрона адреса">
-                    <button class="imageButton"><img src="Img/send.png" alt=">"></button>
-                </div>
+                <form class="combiInput" action="sub.php" method="POST">
+            <input type="email" name="email" placeholder="Електронна адреса" required>
+            <button type="submit" class="imageButton"><img src="Img/send.png" alt=">"></button>
+        </form>
             </div>
             </footer>
 

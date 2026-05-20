@@ -1,6 +1,6 @@
 <?php
 const ADMIN_LOGIN = 'admin';
-const ADMIN_PASSWORD = '123'; // Зміни на свій
+const ADMIN_PASSWORD = '123'; 
 
 function login($login, $password) {
     if ($login === ADMIN_LOGIN && $password === ADMIN_PASSWORD) {

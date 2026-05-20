@@ -1,21 +1,53 @@
-// --- БУРГЕР МЕНЮ ---
+// 1. ФОРМА ПІДПИСКИ У ФУТЕРІ
+const subscribeForm = document.querySelector('.combiInput');
+
+if (subscribeForm) {
+    subscribeForm.addEventListener('submit', function(e) {
+        e.preventDefault(); 
+
+        const formData = {
+            email: subscribeForm.querySelector('input[name="email"]').value
+        };
+
+        fetch('/VISTAL/sub.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json()) 
+        .then(data => {
+            alert(data.message); 
+            if (data.status === 'success') {
+                subscribeForm.reset(); 
+            }
+        })
+        .catch(error => {
+            console.error('Помилка запиту:', error);
+            alert('Сталася помилка при відправці.');
+        });
+    });
+}
+
+// 2. БУРГЕР МЕНЮ
 const burger = document.getElementById('burger');
 const menu = document.getElementById('menu-links');
 
-burger.addEventListener('click', function() {
-    menu.classList.toggle('active');
-    burger.classList.toggle('active');
-});
+if (burger && menu) {
+    burger.addEventListener('click', function() {
+        menu.classList.toggle('active');
+        burger.classList.toggle('active');
+    });
+}
 
-// --- МОДАЛЬНЕ ВІКНО ТА ФОРМА ---
+// 3. МОДАЛЬНЕ ВІКНО ТА ФОРМА КОНСУЛЬТАЦІЇ
 const consultBtns = document.querySelectorAll('.open-consult-btn');
 const consultOverlay = document.getElementById('consultOverlay');
 const consultModal = document.getElementById('consultModal');
 const closeConsultBtn = document.getElementById('closeConsultBtn');
-// Оголошуємо consultForm лише ОДИН раз
 const consultForm = document.getElementById('consultForm'); 
 
-// Функція відкриття
 function openConsult() {
     if(consultOverlay && consultModal) {
         consultOverlay.style.display = 'block';
@@ -23,7 +55,6 @@ function openConsult() {
     }
 }
 
-// Функція закриття
 function closeConsult() {
     if(consultOverlay && consultModal) {
         consultOverlay.style.display = 'none';
@@ -31,23 +62,18 @@ function closeConsult() {
     }
 }
 
-// Вішаємо подію кліку на КОЖНУ кнопку на сторінці
 if(consultBtns.length > 0) {
     consultBtns.forEach(function(btn) {
         btn.addEventListener('click', openConsult);
     });
 }
 
-// Закриття по хрестику та кліку на розмитий фон
 if(closeConsultBtn) closeConsultBtn.addEventListener('click', closeConsult);
 if(consultOverlay) consultOverlay.addEventListener('click', closeConsult);
 
-// --- ОБРОБКА ВІДПРАВКИ ФОРМИ ---
 if (consultForm) {
     consultForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Забороняємо стандартну відправку сторінки
-
-        // Збираємо дані з полів
+        event.preventDefault(); 
         const formData = {
             name: consultForm.querySelector('input[name="name"]').value,
             phone: consultForm.querySelector('input[name="phone"]').value,
@@ -55,20 +81,17 @@ if (consultForm) {
             message: consultForm.querySelector('textarea[name="message"]').value
         };
 
-        // Відправляємо на сервер
         fetch('/VISTAL/sub.php', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         })
         .then(response => response.json())
         .then(data => {
-            alert(data.message); // Сповіщення для користувача
+            alert(data.message); 
             if (data.status === 'success') {
-                closeConsult(); // Закриваємо модальне вікно після успіху
-                consultForm.reset(); // Очищаємо форму
+                closeConsult(); 
+                consultForm.reset(); 
             }
         })
         .catch(error => {
@@ -77,14 +100,13 @@ if (consultForm) {
         });
     });
 }
-// --- ОБРОБКА ФОРМИ НА СТОРІНЦІ КОНТАКТІВ ---
+
+// 4. ФОРМА НА СТОРІНЦІ КОНТАКТІВ
 const contactsPageForm = document.getElementById('contactsPageForm');
 
 if (contactsPageForm) {
     contactsPageForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Забороняємо перезавантаження сторінки
-
-        // Збираємо дані з полів
+        event.preventDefault(); 
         const formData = {
             name: contactsPageForm.querySelector('input[name="name"]').value,
             phone: contactsPageForm.querySelector('input[name="phone"]').value,
@@ -92,20 +114,16 @@ if (contactsPageForm) {
             message: contactsPageForm.querySelector('textarea[name="message"]').value
         };
 
-        // Відправляємо на наш сервер
         fetch('/VISTAL/sub.php', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
         })
         .then(response => response.json())
         .then(data => {
-            alert(data.message); // Сповіщення для користувача
+            alert(data.message); 
             if (data.status === 'success') {
-                contactsPageForm.reset(); // Очищаємо форму після успіху
-                // Тут ми не викликаємо closeConsult(), бо вікна немає :)
+                contactsPageForm.reset(); 
             }
         })
         .catch(error => {
@@ -114,8 +132,16 @@ if (contactsPageForm) {
         });
     });
 }
-const swiper = new Swiper(".mySwiper", {
-  loop: true,
-  autoplay: { delay: 3000 },
-  pagination: { el: ".swiper-pagination", clickable: true },
-});
+
+try {
+    const swiperElement = document.querySelector(".mySwiper");
+    if (swiperElement && window.Swiper) {   
+        const swiper = new Swiper(".mySwiper", {
+          loop: true,
+          autoplay: { delay: 3000 },
+          pagination: { el: ".swiper-pagination", clickable: true },
+        });
+    }
+} catch (error) {
+    console.log("Слайдер не завантажено, але сайт працює далі!", error);
+}

@@ -128,10 +128,10 @@
         <h4 class="white">
             Отримуйте актуальні новити щодо правил компанії, нових товарів та послуг залишивши вашу електрону адресу.
         </h4>
-        <div class="combiInput">
-            <input type="text" placeholder="Електрона адреса">
-            <button class="imageButton"><img src="Img/send.png" alt=">"></button>
-        </div>
+        <form class="combiInput" action="sub.php" method="POST">
+            <input type="email" name="email" placeholder="Електронна адреса" required>
+            <button type="submit" class="imageButton"><img src="Img/send.png" alt=">"></button>
+        </form>
       </div>
     </footer>
      <?php include 'modal.php'; ?>
