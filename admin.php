@@ -31,10 +31,10 @@ $items = allSubscriptions();
             <?php foreach ($items as $index => $item): ?>
             <tr>
                 <td><?= $index + 1 ?></td>
-                <td><?= htmlspecialchars($item['name']) ?></td>
-                <td><?= htmlspecialchars($item['phone']) ?></td>
-                <td><?= htmlspecialchars($item['email']) ?></td>
-                <td><?= htmlspecialchars($item['message']) ?></td>
+                <td><?= htmlspecialchars($item['name'] ?? '-') ?></td>
+                <td><?= htmlspecialchars($item['phone'] ?? '-') ?></td>
+                <td><?= htmlspecialchars($item['email'] ?? '-') ?></td>
+                <td><?= htmlspecialchars($item['message'] ?? 'Підписка з футера') ?></td>
             </tr>
             <?php endforeach; ?>
         </table>
